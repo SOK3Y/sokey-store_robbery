@@ -14,7 +14,7 @@ AddEventHandler('napad:kasetka', function()
             onFinish = function()
             TriggerServerEvent('napad_sv:kasetka')
         end, onCancel = function()
-            exports["bagieta_notify"]:displayNotification(5, "Powiadomienie", "Przerwałeś okradanie kasetki")
+            ESX.ShowNotification('Przerwałeś okradanie kasetki')
         end
         })
     end
