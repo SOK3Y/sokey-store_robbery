@@ -12,7 +12,27 @@ AddEventHandler('napad:kasetka', function()
                 lib ="grab"
             },
             onFinish = function()
-            TriggerServerEvent('napad_sv:kasetka')
+                local coords = GetEntityCoords(GetPlayerPed(-1))
+                local ATMRobbery = {
+                    code = "10-90",
+                    street = exports['esx_dispatch']:GetStreetAndZone(),
+                    id = exports['esx_dispatch']:randomId(),
+                    priority = 1,
+                    title = "Rabunek Sklepu",
+                    duration = 5500,
+                    blipname = "# Rabunek Sklepu",
+                    color = 2,
+                    sprite = 304,
+                    fadeOut = 30,
+                    position = {
+                        x = coords.x,
+                        y = coords.y,
+                        z = coords.z
+                    },
+                    job = "police"
+                }
+                TriggerServerEvent("dispatch:svNotify", StoreRobbery)
+                TriggerServerEvent('napad_sv:kasetka')
         end, onCancel = function()
             ESX.ShowNotification('Przerwałeś okradanie kasetki')
         end
