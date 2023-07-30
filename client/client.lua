@@ -13,7 +13,7 @@ AddEventHandler('napad:kasetka', function()
             },
             onFinish = function()
                 local coords = GetEntityCoords(GetPlayerPed(-1))
-                local ATMRobbery = {
+                local StoreRobbery = {
                     code = "10-90",
                     street = exports['esx_dispatch']:GetStreetAndZone(),
                     id = exports['esx_dispatch']:randomId(),
